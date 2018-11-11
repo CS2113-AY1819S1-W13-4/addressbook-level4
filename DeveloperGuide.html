@@ -815,7 +815,7 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <p>The implementation of this command utilises both <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the check command operation is implemented.</p>
+<p>The following sequence diagram shows how the check command operation is implemented:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -920,7 +920,7 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the sell operation is implemented</p>
+<p>The following sequence diagrams show how the sell operation is implemented:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1207,13 +1207,61 @@ unintended by the user.</p>
 </div>
 <div class="sect2">
 <h3 id="tab-feature"><a class="link" href="#tab-feature">4.9. Tab feature</a></h3>
+<div class="paragraph">
+<p>For users' <strong>convenience</strong>, we have implemented this feature for them to easily cycle through existing <code>ISBN</code> in the inventory without the need to manually type them out.</p>
+</div>
 <div class="sect3">
 <h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">4.9.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>For <strong>convenience</strong>, we have implemented this feature for users to easily cycle through existing <code>ISBN</code> in the inventory without the need to manually type them out.</p>
+<p>The tab mechanism utilises <code>Ui</code>, <code>Model</code> and <code>Logic</code> component to complete its function.</p>
 </div>
 <div class="paragraph">
-<p>The tab feature</p>
+<p>The following sequence diagram shows how the tab operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TabSequenceDiagram.png" alt="TabSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 16. Sequence Diagram for Tab Operation</div>
+</div>
+<div class="paragraph">
+<p>After the function <code>navigateToNextIsbn()</code> is completed, <code>commandTextField.requestFocus()</code> and <code>commandTextField.positionCaret(commandTextField.getLength())</code> are called to bring the caret to the end of the line for users to finish typing their command.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">4.9.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-tab-executes"><a class="link" href="#aspect-how-tab-executes">Aspect: How tab executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Accessing data in <code>BookInventory</code> using <code>Logic</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reuses current imports of <code>CommandBox</code> to function.</p>
+</li>
+<li>
+<p>Cons: Increases coupling as it does not uphold the Law of Demeter.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Accessing data in <code>BookInventory</code> directly in <code>CommandBox</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to access.</p>
+</li>
+<li>
+<p>Cons: Increases coupling as <code>CommandBox</code> now imports both <code>Logic</code> and `Model.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1322,7 +1370,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 16. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 17. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2805,4 +2853,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 18:57:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 22:53:16 UTC</div></div></div></body></html>

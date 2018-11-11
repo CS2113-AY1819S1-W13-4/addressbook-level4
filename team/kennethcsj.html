@@ -10,7 +10,29 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BookInventory is a desktop application catered primarily for store owners to manage their book supplies. It includes many basic and advance functions such as adding, deleting and requesting books from the inventory. The user interacts with it using a CLI, and it has a GUI created with JavaFX. This portfolio demonstrates my ability to write documentation for both User Guide and Developer Guide.</p>
+<p><em>BookInventory</em> is a <strong>multi-platform</strong> desktop application catered <strong>primarily</strong> for store owners to manage their book supplies. It includes many basic and advance features such as adding, deleting and requesting of books in the inventory.</p>
+</div>
+<div class="paragraph">
+<p>Users interact with <em>BookInventory</em> using <strong>Command Line Interface (CLI)</strong>, and has a <strong>Graphic User Interface (GUI)</strong> created with JavaFX.</p>
+</div>
+<div class="paragraph">
+<p><em>BookInventory</em> was developed by a team of four students over a period of one semester. The original source code was adapted from the Address Book (Level 4) project by SE-EDU.</p>
+</div>
+<div class="paragraph">
+<p><em>BookInventory</em> started as a project for the following modules offered by the School of Computing, National University of Singapore:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>CS2101</strong> - Effective Communication for Computing Professionals</p>
+</li>
+<li>
+<p><strong>CS2113</strong> - Software Engineering &amp; Object-Oriented Programming</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This Project Portfolio demonstrates my contributions and ability to write documentation for both User Guide and Developer Guide for <em>BookInventory</em>.</p>
 </div>
 </div>
 </div>
@@ -27,13 +49,10 @@
 <p>What it does: allows user to execute <code>stock</code>/<code>sell</code>/<code>delete</code> commands by selecting the target book either from a list or with their unique ISBN. To facilitate the typing of ISBN, users can cycle through the existing ISBNs in the inventory using their incompleted ISBN entry by pressing <kbd>Tab</kbd>.</p>
 </li>
 <li>
-<p>Justification: These features improve the product significantly because stocking up and selling of books are done daily which make them the core functions of the app. As such, the app should provide a convenient way to address them.</p>
+<p>Justification: These features improve the product significantly as stocking up and selling of books are done <strong>daily</strong> which make them the core functions of <em>BookInventory</em>. As such, the application should provide a convenient way to address them.</p>
 </li>
 <li>
 <p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
 </li>
 </ul>
 </div>
@@ -53,7 +72,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.1</code> - <code>v1.3</code> (4 releases) on GitHub</p>
+<p>Managed releases <code>v1.1</code> - <code>v1.4</code> (5 releases) on GitHub.</p>
 </li>
 </ul>
 </div>
@@ -63,16 +82,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Added a new cost field to the <code>add</code> command</p>
+<p>Added a new cost field to the <code>add</code> command.</p>
 </li>
 <li>
-<p>Updated the identifier for books to ISBN</p>
+<p>Updated the unique identifier for books to <code>ISBN</code>.</p>
 </li>
 <li>
-<p>Updated the <code>edit</code> command to prevent edits to <code>quantity</code></p>
+<p>Updated the <code>edit</code> command to prevent edits to <code>quantity</code>.</p>
 </li>
 <li>
-<p>Updated <code>find</code> command to allow substrings as an input to find for books</p>
+<p>Updated <code>find</code> command to allow substrings as an input to find for books.</p>
 </li>
 </ul>
 </div>
@@ -82,7 +101,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the User Guide to be a representation of the app</p>
+<p>Updated the initial User Guide to be a representation of <em>BookInventory</em>.</p>
 </li>
 </ul>
 </div>
@@ -92,13 +111,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/CS2113-AY1819S1-T12-3/main/issues/174">1</a>, <a href="https://github.com/CS2113-AY1819S1-T12-3/main/issues/176">2</a>, <a href="https://github.com/CS2113-AY1819S1-T12-3/main/issues/182">3</a>, <a href="https://github.com/CS2113-AY1819S1-T12-3/main/issues/196">4</a>)</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com/nusCS2113-AY1819S1/forum/issues/58">1</a>)</p>
-</li>
-<li>
-<p>Some parts of the <kbd>Tab</kbd> feature I added was adopted by several other class mates</p>
+<p>Some parts of the <kbd>Tab</kbd> feature I added was adopted by several other classmates</p>
 </li>
 </ul>
 </div>
@@ -185,6 +201,34 @@ Decrease the quantity available for the book with the corresponding ISBN13 by 4.
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="cycling-through-existing-isbn-kbd-tab-kbd"><a class="link" href="#cycling-through-existing-isbn-kbd-tab-kbd">Cycling through existing Isbn: <kbd>Tab</kbd></a></h3>
+<div class="paragraph">
+<p>You can auto-fill the Isbn field with existing ones in the Inventory to save the hassle having to type the entire Isbn of a book.<br>
+Format: <kbd>Tab</kbd></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sell i/</code><br>
+<kbd>Tab</kbd> (completes the <code>Isbn</code> field for <code>sell i/</code> with the Isbn of the first book in the inventory)<br>
+ E.g. <code>sell i/9782123456803</code></p>
+</li>
+<li>
+<p><code>sell i/978</code><br>
+<kbd>Tab</kbd> (completes the <code>Isbn</code> field for <code>sell i/978</code> with the first Isbn of a book that contains <code>978</code> in the inventory)<br>
+E.g. <code>sell i/9782123456803</code></p>
+</li>
+<li>
+<p><code>sell i/777</code><br>
+<kbd>Tab</kbd> (does not complete the <code>Isbn</code> field as inventory does not contains books with Isbn starting with <code>777</code>)</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -194,33 +238,91 @@ Decrease the quantity available for the book with the corresponding ISBN13 by 4.
 <p><em>This part shows the sections that I contributed to the Developer Guide. My ability to write technical documentation and the technical depth of my contributions are showcased here.</em></p>
 </div>
 <div class="sect2">
+<h3 id="check-feature"><a class="link" href="#check-feature">Check feature</a></h3>
+<div class="paragraph">
+<p>One of the <strong>important</strong> features for BookInventory is for users, especially store owners, to be able to check the remaining stocks for the books.
+To do so, we have added a <code>check</code> command to the existing list of commands.</p>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The implementation of this command utilises both <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the check command operation is implemented:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CheckSequenceDiagram.png" alt="CheckSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 1. Sequence Diagram for Check Command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-check-executes"><a class="link" href="#aspect-how-check-executes">Aspect: How check executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Sorts the entire BookInventory.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Unable to retrieve the original order of the BookInventory.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Only the displayed list is sorted.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Original order of the BookInventory is kept.</p>
+</li>
+<li>
+<p>Cons: Changes to the original code to display the list is required.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="sell-feature"><a class="link" href="#sell-feature">Sell feature</a></h3>
 <div class="paragraph">
 <p>Since selling of books is the bread and butter of the store owners, we have added a <code>sell</code> command to the existing list of commands.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the sell operation is implemented</p>
+<p>The following sequence diagrams show how the sell operation is implemented:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/SellSequenceDiagram.png" alt="SellSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 1. Sequence Diagram for Sell Command</div>
+<div class="title">Figure 2. Sequence Diagram for Sell Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/SellSequenceDiagramSd.png" alt="SellSequenceDiagramSd" width="800">
 </div>
-<div class="title">Figure 2. Sequence Diagram Reference for Sell Command</div>
+<div class="title">Figure 3. Sequence Diagram Reference for Sell Command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-sell-command-is-implemented"><a class="link" href="#aspect-how-sell-command-is-implemented">Aspect: How sell command is implemented</a></h5>
 <div class="ulist">
@@ -256,5 +358,65 @@ Decrease the quantity available for the book with the corresponding ISBN13 by 4.
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="tab-feature"><a class="link" href="#tab-feature">Tab feature</a></h3>
+<div class="paragraph">
+<p>For users' <strong>convenience</strong>, we have implemented this feature for them to easily cycle through existing <code>ISBN</code> in the inventory without the need to manually type them out.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 18:57:02 UTC</div></div></div></body></html>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The tab mechanism utilises <code>Ui</code>, <code>Model</code> and <code>Logic</code> component to complete its function.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the tab operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TabSequenceDiagram.png" alt="TabSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 4. Sequence Diagram for Tab Operation</div>
+</div>
+<div class="paragraph">
+<p>After the function <code>navigateToNextIsbn()</code> is completed, <code>commandTextField.requestFocus()</code> and <code>commandTextField.positionCaret(commandTextField.getLength())</code> are called to bring the caret to the end of the line for users to finish typing their command.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-tab-executes"><a class="link" href="#aspect-how-tab-executes">Aspect: How tab executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Accessing data in <code>BookInventory</code> using <code>Logic</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reuses current imports of <code>CommandBox</code> to function.</p>
+</li>
+<li>
+<p>Cons: Increases coupling as it does not uphold the Law of Demeter.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Accessing data in <code>BookInventory</code> directly in <code>CommandBox</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to access.</p>
+</li>
+<li>
+<p>Cons: Increases coupling as <code>CommandBox</code> now imports both <code>Logic</code> and `Model.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 22:53:16 UTC</div></div></div></body></html>
