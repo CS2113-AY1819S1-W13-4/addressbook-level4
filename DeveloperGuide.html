@@ -31,14 +31,16 @@
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
-<li><a href="#sell-feature">4.2. Sell feature</a></li>
-<li><a href="#request-feature">4.3. Request feature</a></li>
-<li><a href="#stock-feature">4.4. Stock feature</a></li>
-<li><a href="#statistic-feature">4.5. Statistic feature</a></li>
-<li><a href="#password-protection">4.6. Password Protection</a></li>
-<li><a href="#command-prediction">4.7. Command Prediction</a></li>
-<li><a href="#logging">4.8. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
+<li><a href="#check-feature">4.2. Check feature</a></li>
+<li><a href="#stock-feature">4.3. Stock feature</a></li>
+<li><a href="#sell-feature">4.4. Sell feature</a></li>
+<li><a href="#request-feature">4.5. Request feature</a></li>
+<li><a href="#statistic-feature">4.6. Statistic feature</a></li>
+<li><a href="#password-protection">4.7. Password Protection</a></li>
+<li><a href="#command-prediction">4.8. Command Prediction</a></li>
+<li><a href="#tab-feature">4.9. Tab feature</a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -802,9 +804,115 @@ If the <code>currentStatePointer</code> is at index <code>bookInventoryStateList
 </div>
 </div>
 <div class="sect2">
-<h3 id="sell-feature"><a class="link" href="#sell-feature">4.2. Sell feature</a></h3>
+<h3 id="check-feature"><a class="link" href="#check-feature">4.2. Check feature</a></h3>
+<div class="paragraph">
+<p>One of the <strong>important</strong> features for BookInventory is for users, especially store owners, to be able to check the remaining stocks for the books.
+To do so, we have added a <code>check</code> command to the existing list of commands.</p>
+</div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The implementation of this command utilises both <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the check command operation is implemented.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CheckSequenceDiagram.png" alt="CheckSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 10. Sequence Diagram for Check Command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-check-executes"><a class="link" href="#aspect-how-check-executes">Aspect: How check executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Sorts the entire BookInventory.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Unable to retrieve the original order of the BookInventory</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Only the displayed list is sorted</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Original order of the BookInventory is kept</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stock-feature"><a class="link" href="#stock-feature">4.3. Stock feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
+</div>
+<div class="paragraph">
+<p>The stock operation is similar to the sell operation, refer to sell command for sequence diagram:</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-stock-command-is-implemented"><a class="link" href="#aspect-how-stock-command-is-implemented">Aspect: How stock command is implemented</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Increases quantity in the Quantity Class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Code is more cohesive.</p>
+</li>
+<li>
+<p>Cons: Adds more code to Quantity Class.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Replace quantity in the Book Class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Does not need to edit Quantity Class.</p>
+</li>
+<li>
+<p>Cons: Code becomes less cohesive.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sell-feature"><a class="link" href="#sell-feature">4.4. Sell feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
 </div>
@@ -821,7 +929,7 @@ If the <code>currentStatePointer</code> is at index <code>bookInventoryStateList
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-sell-command-is-implemented"><a class="link" href="#aspect-how-sell-command-is-implemented">Aspect: How sell command is implemented</a></h5>
 <div class="ulist">
@@ -858,16 +966,16 @@ If the <code>currentStatePointer</code> is at index <code>bookInventoryStateList
 </div>
 </div>
 <div class="sect2">
-<h3 id="request-feature"><a class="link" href="#request-feature">4.3. Request feature</a></h3>
+<h3 id="request-feature"><a class="link" href="#request-feature">4.5. Request feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Request command utilises both the <code>RequestModel</code> and <code>Logic</code> component to fulfil its function.
 This is accessible for all users.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-request-command-is-implemented-in-a-different-category"><a class="link" href="#aspect-request-command-is-implemented-in-a-different-category">Aspect: Request command is implemented in a different category</a></h5>
 <div class="paragraph">
@@ -881,7 +989,7 @@ A request object consists of three objects, Isbn, Email, and Quantity.</p>
 <div class="content">
 <img src="images/RequestModelClassDiagram.jpg" alt="RequestModelClassDiagram" width="800">
 </div>
-<div class="title">Figure 10. Structure of the RequestModel Component</div>
+<div class="title">Figure 11. Structure of the RequestModel Component</div>
 </div>
 <div class="paragraph">
 <p>The implementation is similar to 2.4. Model component.
@@ -894,7 +1002,7 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <div class="content">
 <img src="images/RequestStorageClassDiagram.jpg" alt="RequestStorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 11. Structure of the RequestStorage Component</div>
+<div class="title">Figure 12. Structure of the RequestStorage Component</div>
 </div>
 <div class="paragraph">
 <p>Likewise, this implementation is similar to 2.5. Storage component.</p>
@@ -906,7 +1014,7 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <div class="content">
 <img src="images/HighLevelRequestSequenceDiagram.png" alt="HighLevelRequestSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 12. Structure of Request (High Level Sequence Diagram)</div>
+<div class="title">Figure 13. Structure of Request (High Level Sequence Diagram)</div>
 </div>
 <div class="ulist">
 <ul>
@@ -951,57 +1059,9 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="stock-feature"><a class="link" href="#stock-feature">4.4. Stock feature</a></h3>
+<h3 id="statistic-feature"><a class="link" href="#statistic-feature">4.6. Statistic feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current implementation</a></h4>
-<div class="paragraph">
-<p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
-</div>
-<div class="paragraph">
-<p>The stock operation is similar to the sell operation, refer to sell command for sequence diagram:</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-stock-command-is-implemented"><a class="link" href="#aspect-how-stock-command-is-implemented">Aspect: How stock command is implemented</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Increases quantity in the Quantity Class.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Code is more cohesive.</p>
-</li>
-<li>
-<p>Cons: Adds more code to Quantity Class.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Replace quantity in the Book Class.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Does not need to edit Quantity Class.</p>
-</li>
-<li>
-<p>Cons: Code becomes less cohesive.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="statistic-feature"><a class="link" href="#statistic-feature">4.5. Statistic feature</a></h3>
-<div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current implementation</a></h4>
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The statistic feature is facilitated by a singleton class StatisticCenter. It is called directly from many existing commands and is stored in Json format.</p>
 </div>
@@ -1015,7 +1075,7 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-stock-command-is-implemented-2"><a class="link" href="#aspect-how-stock-command-is-implemented-2">Aspect: How stock command is implemented</a></h5>
 <div class="ulist">
@@ -1052,9 +1112,9 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="password-protection"><a class="link" href="#password-protection">4.6. Password Protection</a></h3>
+<h3 id="password-protection"><a class="link" href="#password-protection">4.7. Password Protection</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
+<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>A password is required by the user for him/her to be able to use BookInventory.</p>
 </div>
@@ -1066,7 +1126,7 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-hashing-is-done"><a class="link" href="#aspect-how-hashing-is-done">Aspect: How hashing is done</a></h5>
 <div class="ulist">
@@ -1103,9 +1163,9 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-prediction"><a class="link" href="#command-prediction">4.7. Command Prediction</a></h3>
+<h3 id="command-prediction"><a class="link" href="#command-prediction">4.8. Command Prediction</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.7.1. Current Implementation</a></h4>
+<h4 id="current-implementation-8"><a class="link" href="#current-implementation-8">4.8.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>To maximize user friendliness, we have implemented predictive text which will appear
 familiar for phone users. BookInventory users may inadvertently misspell command words,
@@ -1114,7 +1174,7 @@ list?". To achieve this, we have utilized the Dice Coefficient.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-does-dice-coefficient-works"><a class="link" href="#aspect-how-does-dice-coefficient-works">Aspect: How does Dice Coefficient works?</a></h5>
 <div class="paragraph">
@@ -1139,14 +1199,26 @@ unintended by the user.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
+<h3 id="tab-feature"><a class="link" href="#tab-feature">4.9. Tab feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">4.9.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>For <strong>convenience</strong>, we have implemented this feature for users to easily cycle through existing <code>ISBN</code> in the inventory without the need to manually type them out.</p>
+</div>
+<div class="paragraph">
+<p>The tab feature</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1177,7 +1249,7 @@ unintended by the user.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1243,7 +1315,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 13. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 14. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2726,4 +2798,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 18:43:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 13:41:54 UTC</div></div></div></body></html>
