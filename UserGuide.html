@@ -14,7 +14,11 @@
 <li><a href="#quick-start">3. Quick Start</a></li>
 <li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#cycling-through-existing-isbn-kbd-tab-kbd">4.1. Cycling through existing Isbn: <kbd>Tab</kbd></a></li>
+<li><a href="#command-box">4.1. Command Box</a></li>
+<li><a href="#book-list">4.2. Book List</a></li>
+<li><a href="#request-list">4.3. Request List</a></li>
+<li><a href="#command-panel">4.4. Command Panel</a></li>
+<li><a href="#full-screen-mode">4.5. Full Screen Mode</a></li>
 </ul>
 </li>
 <li><a href="#commands-for-students">5. Commands for Students</a>
@@ -42,9 +46,9 @@
 <li><a href="#deleting-a-book-code-delete-code">7.4. Deleting a book : <code>delete</code></a></li>
 <li><a href="#deleting-a-request-code-deleterequest-code">7.5. Deleting a request : <code>deleterequest</code></a></li>
 <li><a href="#editing-a-book-code-edit-code">7.6. Editing a book : <code>edit</code></a></li>
-<li><a href="#toggle-request-panel-code-togglerequests-code">7.7. Toggle request panel : <code>togglerequests</code></a></li>
-<li><a href="#decrease-book-quantity-books-sold-code-sell-code">7.8. Decrease Book Quantity (Books Sold) : <code>sell</code></a></li>
-<li><a href="#increase-book-quantity-ordered-more-books-code-stock-code">7.9. Increase Book Quantity (Ordered more books): <code>stock</code></a></li>
+<li><a href="#decrease-book-quantity-books-sold-code-sell-code">7.7. Decrease Book Quantity (Books Sold) : <code>sell</code></a></li>
+<li><a href="#increase-book-quantity-ordered-more-books-code-stock-code">7.8. Increase Book Quantity (Ordered more books): <code>stock</code></a></li>
+<li><a href="#toggle-request-panel-code-togglerequests-code">7.9. Toggle request panel : <code>togglerequests</code></a></li>
 </ul>
 </li>
 <li><a href="#data-storage">8. Data Storage</a>
@@ -113,13 +117,6 @@
 </div>
 <div class="title">Figure 1. Password Prompt</div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Key-in password</p>
-</li>
-</ol>
-</div>
 </li>
 <li>
 <p>A password will be required by the application to use it.</p>
@@ -156,16 +153,26 @@
 </li>
 <li>
 <p>Now you are ready to explore <em>BookInventory</em>!</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Input Commands</p>
 </li>
-</ol>
+</ul>
 </div>
-</li>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this segment, you will be briefed on what each user interface does.</p>
+</div>
+<div class="sect2">
+<h3 id="command-box"><a class="link" href="#command-box">4.1. Command Box</a></h3>
+<div class="paragraph">
+<p>Input Commands</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>You can simply type the command in the command box as shown in Figure 5, and press <kbd>Enter</kbd> to execute it.<br>
+<p>You can simply type the command in the command box as shown in Figure 5. Hit <kbd>Enter</kbd> to execute it.<br>
 e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
 <div class="imageblock" style="text-align: left">
 <div class="content">
@@ -175,7 +182,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </li>
 <li>
-<p>Some example commands you can try:</p>
+<p>You may try out the following sample commands:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -192,20 +199,73 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each command.</p>
-</li>
-<li>
-<p>Command Panel</p>
-</li>
-</ol>
-</div>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="command-format"><a class="link" href="#command-format">4.1.1. Command Format</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/Harry Potter</code>.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/Harry Potter t/cs2113t</code> or as <code>n/Harry Potter</code>.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+</li>
+<li>
+<p>Items in brackets are <strong>required</strong> and always <strong>private</strong> e.g. <code>q/QUANTITY (c/COST)</code></p>
+</li>
+<li>
+<p>Items in arrow brackets are commands that are commands available depending on the user e.g. &lt;Owner&gt; means command only usable by Owner.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="book-list"><a class="link" href="#book-list">4.2. Book List</a></h3>
+<div class="paragraph">
+<p>Beginning from the left, you should see a panel of books arranged. These are the available books
+which the bookstore owners have placed up for display.
+.  If you are an owner, refer to <a href="#commands-for-bookstore-owners">Section 7, &#8220;Commands for Bookstore Owners&#8221;</a> to begin managing your book inventory.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/BookList.png" alt="BookList" width="400">
+</div>
+<div class="title">Figure 6. Command Panel</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="request-list"><a class="link" href="#request-list">4.3. Request List</a></h3>
+<div class="paragraph">
+<p>The middle panel is designed to show Bookstore Owners the requests made by students.</p>
+</div>
+<div class="paragraph">
+<p>If you are a student, you may minimize this panel as this panel will appear empty to you.
+Refer to <a href="#commands-for-students">Section 5, &#8220;Commands for Students&#8221;</a> to find out what you can do in <em>BookInventory</em>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="command-panel"><a class="link" href="#command-panel">4.4. Command Panel</a></h3>
+<div class="paragraph">
+<p>This design will come in handy if you are new to <em>BookInventory</em> or a non-tech savvy individual.
+Simply click on a command and the Command Box will display the command.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/CommandPanel.png" alt="CommandPanel" width="400">
+</div>
+<div class="title">Figure 7. Command Panel</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>A command panel is located at the right side of the application. This is suited for beginner users.</p>
 </li>
@@ -225,46 +285,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
-<div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Full Screen Mode</strong></p>
-</div>
-<div class="paragraph">
-<p>Hit F11 to toggle between full-screen mode and windowed mode. A full-screen toggle button can also be found under the drop-down menu of the top bar under “Window”.</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Command Format</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/Harry Potter</code>.</p>
-</li>
-<li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/Harry Potter t/cs2113t</code> or as <code>n/Harry Potter</code>.</p>
-</li>
-<li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
-</li>
-<li>
-<p>Items in brackets are <strong>required</strong> and always <strong>private</strong> e.g. <code>q/QUANTITY (c/COST)</code></p>
-</li>
-<li>
-<p>Items in arrow brackets are commands that are commands available depending on the user e.g. &lt;Owner&gt; means command only usable by Owner.
-===</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="cycling-through-existing-isbn-kbd-tab-kbd"><a class="link" href="#cycling-through-existing-isbn-kbd-tab-kbd">4.1. Cycling through existing Isbn: <kbd>Tab</kbd></a></h3>
+<div class="sect3">
+<h4 id="cycling-through-existing-isbn-kbd-tab-kbd"><a class="link" href="#cycling-through-existing-isbn-kbd-tab-kbd">4.4.1. Cycling through existing Isbn: <kbd>Tab</kbd></a></h4>
 <div class="paragraph">
 <p>You can auto-fill the Isbn field with existing ones in the Inventory to save the hassle of having to type the entire Isbn of a book.<br>
 Format: <kbd>Tab</kbd></p>
@@ -290,6 +312,13 @@ E.g. <code>sell i/9782123456803</code></p>
 E.g. <code>sell i/777</code></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="full-screen-mode"><a class="link" href="#full-screen-mode">4.5. Full Screen Mode</a></h3>
+<div class="paragraph">
+<p>Hit F11 to toggle between full-screen mode and windowed mode. A full-screen toggle button can also be found under the drop-down menu of the top bar under “Window”.</p>
 </div>
 </div>
 </div>
@@ -685,14 +714,7 @@ Edits the cost of the 2nd book to be <code>30</code> and clears all existing tag
 </div>
 </div>
 <div class="sect2">
-<h3 id="toggle-request-panel-code-togglerequests-code"><a class="link" href="#toggle-request-panel-code-togglerequests-code">7.7. Toggle request panel : <code>togglerequests</code></a></h3>
-<div class="paragraph">
-<p>Toggle the request panel. When toggled off, requests are hidden and request panel can be minimized. Strictly for bookstore owners.<br>
-Format: <code>togglerequests</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="decrease-book-quantity-books-sold-code-sell-code"><a class="link" href="#decrease-book-quantity-books-sold-code-sell-code">7.8. Decrease Book Quantity (Books Sold) : <code>sell</code></a></h3>
+<h3 id="decrease-book-quantity-books-sold-code-sell-code"><a class="link" href="#decrease-book-quantity-books-sold-code-sell-code">7.7. Decrease Book Quantity (Books Sold) : <code>sell</code></a></h3>
 <div class="paragraph">
 <p>Decrease an existing book quantity in the inventory list.<br>
 Format: <code>sell INDEX q/QUANTITY</code> OR <code>sell i/ISBN13 q/QUANTITY</code></p>
@@ -732,7 +754,7 @@ Decrease the quantity available for the book with the corresponding ISBN13 by 4.
 </div>
 </div>
 <div class="sect2">
-<h3 id="increase-book-quantity-ordered-more-books-code-stock-code"><a class="link" href="#increase-book-quantity-ordered-more-books-code-stock-code">7.9. Increase Book Quantity (Ordered more books): <code>stock</code></a></h3>
+<h3 id="increase-book-quantity-ordered-more-books-code-stock-code"><a class="link" href="#increase-book-quantity-ordered-more-books-code-stock-code">7.8. Increase Book Quantity (Ordered more books): <code>stock</code></a></h3>
 <div class="paragraph">
 <p>Increase an existing book quantity in the inventory list.<br>
 Format: <code>stock INDEX q/QUANTITY</code> OR <code>stock i/ISBN13 q/QUANTITY</code></p>
@@ -776,6 +798,13 @@ Examples:</p>
 <p><code>add n/Lord of the Rings i/9789655171990 p/59.90 q/271 c/20.99</code></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="toggle-request-panel-code-togglerequests-code"><a class="link" href="#toggle-request-panel-code-togglerequests-code">7.9. Toggle request panel : <code>togglerequests</code></a></h3>
+<div class="paragraph">
+<p>Toggle the request panel. When toggled off, requests are hidden and request panel can be minimized. Strictly for bookstore owners.<br>
+Format: <code>togglerequests</code></p>
 </div>
 </div>
 </div>
@@ -900,4 +929,4 @@ e.g. <code>stock 1 q/8</code> OR <code>stock i/978-2-12-345680-3 q/8</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:30:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:34:58 UTC</div></div></div></body></html>
