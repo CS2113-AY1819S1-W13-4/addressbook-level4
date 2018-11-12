@@ -10,7 +10,10 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BookInventory is a desktop application used for small to medium book owners. It can be used to track activities such as revenue and stock of the books. The user mainly interacts with the application using Command Line Interface (CLI), and it also has a built-in GUI created with JavaFX. The main code is written in Java and contains approximately 10,000 Lines of Code (LoC).</p>
+<p>BookInventory is a desktop application used for small to medium book store company owners. It is used to store details of books and keeps track of sales. The application is directed to students who wish to purchase books over the application and specify his/her request to order. The request is sent to the administrator who then proceeds to fulfil his order.</p>
+</div>
+<div class="paragraph">
+<p>The application has THREE main users which are students, administrator (owner) and accountant. Both the accountant and the owner can tabulate data and calculate profits using in-built statistical functions. The user’s main interaction with the application is using the Command Line Interface (CLI), and it also has a built-in Graphical User Interface (GUI). The main code is written in Java and contains approximately 10,000 Lines of Code (LoC). Other libraries are used such as TextFX, ControlsFX, Jackson, Guava and Junit5.</p>
 </div>
 </div>
 </div>
@@ -24,22 +27,80 @@
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allow users to key in a password before using the application. This is to prevent unauthorized users from using the application.</p>
+<p>What it does: Allow users to key in a password before using the application.</p>
 </li>
 <li>
-<p>Justification: This is to prevent unauthorized users from using the application because they might temper with the data.</p>
+<p>Justification: To prevent unauthorized access of data.</p>
 </li>
 <li>
-<p>Highlights: The code is written before the application starts, this is to prevent any unnecessary load-up from the application, freeing space and data for the user. The implementation was challenging at first as you require a basic knowledge of JavaFX.</p>
+<p>Highlights: The implementation was challenging at first as a basic knowledge of JavaFX is required. I had to be careful with writing code down because it might overlap with someone else’s code, i.e. change their code. As for the design model, I had to come up with a new implementation of the code as there was no available open source libraries. It was one that I had to think of possible loopholes that may appear, and a model that is sustainable for future development.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: change regular expressions (regex) in the code</p>
+<p><strong>Major enhancement</strong>: added a command panel interface</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Users are able to view available commands. Selecting on any command will give a prompt message of what it does.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>]</p>
+<p>Justification: Help beginner users to navigate with the application more efficiently.</p>
+</li>
+<li>
+<p>Highlights: To be able to understand .fxml files and how they work are no easy tasks. I had to work from integrating with Java and other languages (html included). This feature is a stand-alone feature that is isolated from the other UI elements.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Change regular expressions (regex) in the code.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: To accept only possible inputs, for example, an ISBN field should only contain numbers and hyphens.</p>
+</li>
+<li>
+<p>Justification: To disallow false inputs.</p>
+</li>
+<li>
+<p>Highlights: Regex is a coding practice that at first, seemed incomprehensible to me. After having to learn it through trial and error and tutorials online, I managed to understand it fully.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added full-screen mode</p>
+</li>
+<li>
+<p>Created a few elements in the UI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created pop-up windows like the Alert Box, which acts like a safe mechanism in cases when users would close the application by accident.</p>
+</li>
+<li>
+<p>Added an additional side-bar for the command panel.</p>
+</li>
+<li>
+<p>Helped in creating the homepage design.</p>
+</li>
+<li>
+<p>Highlights: I had to understand other coding languages as well such as HTML and FXML.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=iashcole">Functional/Test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -50,7 +111,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.0</code> - <code>v1.1</code> (2 releases) on GitHub</p>
+<p>Managed releases <code>v1.3</code> - <code>v1.4</code> (3 releases) on GitHub</p>
 </li>
 </ul>
 </div>
@@ -60,35 +121,26 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Morphed model portion of addressbook 4.</p>
+<p>Morphed the commands portion of addressbook 4.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Enhancements to existing features:</p>
 </li>
 <li>
 <p>Community:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>Reviewed Pull Requests with comments</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com/nusCS2113-AY1819S1/forum/issues/58">1</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class</p>
 </li>
 <li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the stock feature I added was adopted by several other class mates</p>
+<p>Fixed bugs and glitches found by others in the Issues section</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Tools:</p>
 </li>
 </ul>
 </div>
@@ -110,10 +162,10 @@
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="key-in-password"><a class="link" href="#key-in-password">Key-in password</a></h3>
-<div class="sidebarblock">
-<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Key-in password</p>
 <div class="ulist">
 <ul>
 <li>
@@ -126,15 +178,42 @@
 <p>For the sake of this early development of the program, the password for the admin: "owner"; student: "password"; accountant: "accountant".</p>
 </li>
 <li>
-<p>Different roles have different sets of permission ie commands.</p>
+<p>You will have different access to the features, i.e. commands, depending on your role.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Command Panel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A command panel is located at the right side of the application. This is suited for beginner users.</p>
+</li>
+<li>
+<p>To select a command, click on any command.</p>
+</li>
+<li>
+<p>A message will pop up on the result display, showing you information and the syntax of the command. A command template will also be given in the command box. You are then required to fill in the remaining fields by following the example given. A screenshot of an example is shown below for your reference.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Full Screen Mode</strong></p>
+</div>
+<div class="paragraph">
+<p>Hit F11 to toggle between full-screen mode and windowed mode. A full-screen toggle button can also be found under the drop-down menu of the top bar under “Window”.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/command_panel_result.png" alt="command panel result">
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
+<p>Note: For advanced users, you are still able to press <kbd>tab</kbd> to cycle through the ISBN.</p>
 </div>
 </div>
 </div>
@@ -151,5 +230,212 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="password-protection"><a class="link" href="#password-protection">Password Protection</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>A password is required by the user upon start-up of the application.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:26:55 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>The password must be secured. A secured password must consist of uppercase, lowercase, numbers and other special characters. For example, “$%GA2dg#” is a good password.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/password_activity_diagram.png" alt="password activity diagram" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>In order to prevent attackers from using easy brute force methods, the application will shut down after 3 consecutive tries.</p>
+</div>
+<div class="paragraph">
+<p>The password will be generated from our team’s side and will only be passed to users discreetly, conveniently through the means of an email.</p>
+</div>
+<div class="paragraph">
+<p>In this stage of development, the default passwords will be as follows:
+.  Administrator: owner
+.  Accountant: accountant
+.  Student: password
+*Format: [ROLE OF USER: PASSWORD]
+The passwords can and are set by developers under CheckPassword.java.
+The following sequence diagram shows how the password interacts with the user.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/password_protection_diagram.png" alt="password protection diagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>After UiManager is created, it will automatically construct a MainWindow. The MainWindow will also create an instance of a CheckPassword window.
+If password is valid, a role class will be created. Else, application will close after 3 wrong tries.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-required-fields-for-password-protection"><a class="link" href="#aspect-required-fields-for-password-protection">Aspect: Required fields for password protection</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice): Use a password-only login UI.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It tricks attackers to think there is only a single password to enter the application.
+Commands such as “add”, “edit”, “clear” etc will be unknown to the basic user i.e. students.</p>
+</li>
+<li>
+<p>Cons: Password is difficult to remember, users will spend the extra time to refer to his/her allocated passwords.
+Passwords will be issued by us (the developer team) and must be secured.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: Use a username/password login interface.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Users can customize their usernames and passwords.</p>
+</li>
+<li>
+<p>Cons: Users can forget their passwords. Developers need to spend extra time to implement changing passwords for users. A user can create multiple account and can take up too much storage.
+Difficult to handle sensitive data like passwords in plain text files, another implementation for encryption would be needed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-usable-commands"><a class="link" href="#aspect-usable-commands">Aspect: Usable commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice): Populate usable commands into role after entering password.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: : If attackers bypass the password UI, they will not be able to perform any commands. Commands are only enabled if the password entered matches the appropriate role.</p>
+</li>
+<li>
+<p>Cons: Doing so might cause the application to lag a little, if the command list is extensive.
+Passwords will be issued by us (the developer team) and must be secured.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: Assign commands based on passwords. (Role class is omitted in this case)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement.</p>
+</li>
+<li>
+<p>Cons: Poor readability in code. If the password UI is bypassed, attackers will be able to have access to commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="command-list-panel-ui"><a class="link" href="#command-list-panel-ui">Command List Panel UI</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
+<div class="paragraph">
+<p>A command list panel UI is made available for all user, to assist him/her better in the application.
+It is a quick access panel located at the side of the application. The command list is sorted alphabetically.</p>
+</div>
+<div class="paragraph">
+<p>This feature is geared towards beginner users.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/command_panel.png" alt="command panel" width="240">
+</div>
+</div>
+<div class="paragraph">
+<p>Selecting on any of the commands in the panel above, will show a brief message of the command in the result display.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the text in the command box will be replaced with a template of the command selected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-ui-design"><a class="link" href="#aspect-ui-design">Aspect: UI design</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice): Use a table view (JavaFX).</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All commands are displayed on-screen without having to click double.</p>
+</li>
+<li>
+<p>Cons: Takes up more space in the overall UI.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: Use a drop-down menu.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Slightly neater and aesthetically more pleasing.</p>
+</li>
+<li>
+<p>Cons: Not the most functional option, users must click twice and scroll through the menu.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-selection-result"><a class="link" href="#aspect-selection-result">Aspect: Selection Result</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice): Displays a message on-screen and replaces text in command box.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: : Allow users (especially beginners) to edit the command field when given the template of the command. They will be guided via a message on-screen.</p>
+</li>
+<li>
+<p>Cons: Users need to spend the extra time clicking on and editing the command text provided instead of typing the command fluently.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: Pops a new window indicating the required fields for command.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Highly sophisticated GUI handling.</p>
+</li>
+<li>
+<p>Cons: Application is meant for CLI for faster execution. Pressing on the wrong command may induce user frustration.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:22:07 UTC</div></div></div></body></html>

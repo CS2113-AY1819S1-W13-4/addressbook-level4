@@ -71,8 +71,20 @@
 <div class="sect1">
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/BookInventoryLogo.png" alt="BookInventoryLogo" width="800">
+</div>
+</div>
 <div class="paragraph">
-<p><em>BookInventory</em> is catered for students as well as other managerial roles such as store managers and accountant. <em>BookInventory</em> allows store managers to increase/decrease stocks for each book. Accountants will be able to check the total revenue and profits for individual books to make better decisions to improve the sales. Students will have access in checking the availability of materials related to their modules. Most importantly, <em>BookInventory</em> is optimized for those who prefer to work with <strong>Command Line Interface (CLI)</strong> while still having the benefits of a <strong>Graphical User Interface (GUI)</strong>. Enjoy!</p>
+<p><em>BookInventory</em> is catered for students as well as other managerial roles such as bookstore owners and in-house accountants.
+In <em>BookInventory</em>, bookstore owners can manage and adjust their book supply.
+In house accountants can check the total revenue and profits for individual books to make better decisions to improve the sales.
+Lastly, students may access available materials as showcased by the bookstore owners.</p>
+</div>
+<div class="paragraph">
+<p><em>BookInventory</em> is optimized for those who prefer to work with <strong>Command Line Interface (CLI)</strong> while still having the benefits of a <strong>Graphical User Interface (GUI)</strong>.
+Hope you enjoy!</p>
 </div>
 </div>
 </div>
@@ -231,8 +243,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect2">
 <h3 id="book-list"><a class="link" href="#book-list">4.2. Book List</a></h3>
 <div class="paragraph">
-<p>Beginning from the left, you should see a panel of books arranged. These are the available books
-which the bookstore owners have placed up for display.
+<p>Beginning from the left, you should find a panel of books, each with 4 parameters.
+They are <code>TAGS</code>, books <code>ISBN</code>, <code>QUANTITY</code> of books and <code>COST</code> of book respectively.
+These are the available books which the bookstore owners have placed up for display.
 .  If you are an owner, refer to <a href="#commands-for-bookstore-owners">Section 7, &#8220;Commands for Bookstore Owners&#8221;</a> to begin managing your book inventory.</p>
 </div>
 <div class="imageblock" style="text-align: left">
@@ -260,7 +273,7 @@ Simply click on a command and the Command Box will display the command.</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/CommandPanel.png" alt="CommandPanel" width="400">
+<img src="images/CommandPanel.png" alt="CommandPanel" width="250">
 </div>
 <div class="title">Figure 7. Command Panel</div>
 </div>
@@ -451,7 +464,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="sect2">
 <h3 id="requesting-for-a-book-code-request-code"><a class="link" href="#requesting-for-a-book-code-request-code">5.7. Requesting for a book : <code>request</code></a></h3>
 <div class="paragraph">
-<p>Requests to purchase a book.<br>
+<p>Requests to buy a book in the inventory.<br>
 Format: <code>request i/ISBN13 e/EMAIL q/QUANTITY</code></p>
 </div>
 <div class="sidebarblock">
@@ -459,14 +472,63 @@ Format: <code>request i/ISBN13 e/EMAIL q/QUANTITY</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The email is for owner to confirm the order with requester.</p>
+<p>Students may indicate interest by requesting an item of a certain ISBN.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The email given helps bookstore owners confirm order with the requester. It is up to the owner&#8217;s preference to decide whether he/she wishes to accept the request.</p>
 </li>
 <li>
-<p>Isbn does not need to exist in the inventory but needs to be valid for owners to get the book</p>
+<p>Possible reasons may include: Item is not a book, item not found in bookstore (Unable to find stock), quantity demanded too high.</p>
+</li>
+<li>
+<p>Note: This app does not have an automatic email response from owner. Thus, it depends on the owner’s personal preference to decide if he/she wishes to reply.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>request i/9780321693624 e/lxh1996@gmail.com q/2</code><br>
+Request for 2 books of book ISBN 9780321693624, with email provided.</p>
+</li>
+<li>
+<p><code>request i/9780205677207 e/krw1998@gmail.com q/21</code><br>
+Request for 21 books of book ISBN 9780205677207, with email provided.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>ISBN input must be valid. Please refer to an online website to search for the book ISBN.</p>
+</li>
+<li>
+<p>It is necessary for you to provide an email so that the owner can contact you.</p>
+</li>
+<li>
+<p>Quantity input is capped at 999. You are unable to request beyond this amount.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -651,16 +713,9 @@ Format: <code>deleterequest INDEX</code></p>
 <p><code>deleterequest 2</code><br>
 Deletes the 2nd request in the displayed request list.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><code>request i/978-2-12-345680-3 e/johnd@gmail.com q/5</code><br>
-Requests for 5 same books with the corresponding iSBN13 with requester&#8217;s email <a href="mailto:johnd@gmail.com">johnd@gmail.com</a></p>
+<p><code>deleterequest 27</code><br>
+Deletes the 27th request in the displayed request list.</p>
 </li>
 </ul>
 </div>
@@ -929,4 +984,4 @@ e.g. <code>stock 1 q/8</code> OR <code>stock i/978-2-12-345680-3 q/8</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:26:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:22:07 UTC</div></div></div></body></html>

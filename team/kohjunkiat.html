@@ -10,13 +10,13 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BookInventory is a desktop application cater for small and medium bookstore owners. It designed to be primarily used as a <strong>stock management tool</strong> by book store owner with the added benefit for customers to directly browse through the stocks they have.</p>
+<p>BookInventory is a desktop application cater for small and medium bookstore owners. It is designed to be primarily used as a <strong>stock management tool</strong> by book store owners with the added benefit for customers to directly browse through the stocks they have.</p>
 </div>
 <div class="paragraph">
-<p>Users interacts with BookInventory through the <strong>Command-Line Interface (CLI)</strong>, and a <strong>Graphical User Interface (GUI)</strong> created with JavaFX. It is written in Java, and has approximately 10 kLoC.</p>
+<p>Users interacts with BookInventory through the <strong>Command-Line Interface (CLI)</strong>, and a <strong>Graphical User Interface (GUI)</strong> created with JavaFX. It is written in Java, and has approximately 10 thousand lines of code (LoC).</p>
 </div>
 <div class="paragraph">
-<p>BookInventory was developed by a team of four students over the course of a semester. It is morphed from the Address Book (Level 4) project by SE-EDU.</p>
+<p>BookInventory was developed by a team of four students over the course of a semester. It was morphed from the Address Book (Level 4) project by SE-EDU.</p>
 </div>
 <div class="paragraph">
 <p>BookInventory started as a project for the following modules offered by the School of Computing, National University of Singapore:</p>
@@ -46,7 +46,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to view the monthly performance of the store through key financial datas like revenue, expense and inventory.</p>
+<p>What it does: It allows the user to gauge the monthly performance of the store through key financial datas like revenue, expense and inventory.</p>
 </li>
 <li>
 <p>Justification: This feature value-adds the product significantly because financial data are tedious to record and  prone to human error. With the help of software, financial data are more reliable, accurate, and owners can access them swiftly.</p>
@@ -61,7 +61,7 @@
 <p><strong>Minor enhancement</strong>: added a stock command that allow admin users to stock books.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>]</p>
+<p><strong>Code contributed</strong>: [<mark>[Functional code]] [</mark>[Test code]]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -92,9 +92,6 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
 <p>Contributed to forum discussions (examples:  <a href="https://github.com/nusCS2113-AY1819S1/forum/issues/58">1</a>)</p>
 </li>
 <li>
@@ -123,10 +120,54 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="graphical-user-interface-gui-layout"><a class="link" href="#graphical-user-interface-gui-layout">Graphical User Interface (GUI) Layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Refer to following picture for the GUI layout of BookInventory:</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/UiLayout.png" alt="UiLayout" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Command Box: Enter your commands here. Results of your commands will be display in the <code>Command Result</code> box.</p>
+</li>
+<li>
+<p>Book List: Shows all the books available in BookInventory, you can search/filter books by entering commands in the <code>Command Box</code>.</p>
+</li>
+<li>
+<p>Information Panel: This is a welcome panel. When you click on any books, this panel will return a search result of relevant books on amazon.</p>
+</li>
+<li>
+<p>Request Panel: Your past requests are shown here.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can send in a request via the <code>Command Box</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>List of Commands: This panels shows the list of commands available. You can click on any commands inside and the <code>Command Box</code> will show the relevant fields you need to provide for the command.</p>
+</li>
+</ul>
+</div>
 <div class="sect2">
 <h3 id="increase-book-quantity-ordered-more-books-code-stock-code"><a class="link" href="#increase-book-quantity-ordered-more-books-code-stock-code">Increase Book Quantity (Ordered more books): <code>stock</code></a></h3>
 <div class="paragraph">
-<p>Increase an existing book quantity in the inventory list.<br>
+<p>You can use this command to increase an existing book quantity in the inventory list.<br>
 Format: <code>stock INDEX q/QUANTITY</code> OR <code>stock i/ISBN13 q/QUANTITY</code></p>
 </div>
 <div class="sidebarblock">
@@ -179,20 +220,85 @@ Increase the quantity available for the book with the corresponding ISBN13 by 5.
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="stock-feature"><a class="link" href="#stock-feature">Stock feature</a></h3>
+<h3 id="statistic-feature"><a class="link" href="#statistic-feature">Statistic feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
+<p>The statistic feature is facilitated by a singleton class StatisticCenter. It is called directly from many existing commands and is stored in Json format.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently this feature isn&#8217;t integrated with the undo/redo feature. It is planned for v2.0.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>The stock operation is similar to the sell operation, refer to sell command for sequence diagram:</p>
+<p>The following sequence diagram shows how the StatisticCenter interact with sell command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statisticSequenceDiagram.png" alt="statisticSequenceDiagram" width="800">
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-stock-command-is-implemented"><a class="link" href="#aspect-how-stock-command-is-implemented">Aspect: How stock command is implemented</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Singleton Class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Hard to test.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Dependency Injection.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Decouples dependencies but hard to implement.</p>
+</li>
+<li>
+<p>Cons: Easier to test.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stock-feature"><a class="link" href="#stock-feature">Stock feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current implementation</a></h4>
+<div class="paragraph">
+<p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
+</div>
+<div class="paragraph">
+<p>The stock operation is similar to the sell operation, refer to Sell Feature for sequence diagram.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-stock-command-is-implemented-2"><a class="link" href="#aspect-how-stock-command-is-implemented-2">Aspect: How stock command is implemented</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -227,4 +333,4 @@ Increase the quantity available for the book with the corresponding ISBN13 by 5.
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:26:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:22:07 UTC</div></div></div></body></html>

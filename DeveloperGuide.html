@@ -87,7 +87,10 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">H.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-book">H.2. Deleting a book</a></li>
-<li><a href="#saving-data">H.3. Saving data</a></li>
+<li><a href="#checking-quantity-of-books">H.3. Checking quantity of books</a></li>
+<li><a href="#selling-a-book">H.4. Selling a book</a></li>
+<li><a href="#using-tab">H.5. Using Tab</a></li>
+<li><a href="#saving-data">H.6. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -870,7 +873,7 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <p>The sell command utilises both the <code>Model</code> and <code>Logic</code> component to fulfil its function.</p>
 </div>
 <div class="paragraph">
-<p>The stock operation is similar to the sell operation, refer to sell command for sequence diagram:</p>
+<p>The stock operation is similar to the sell operation, refer to sell command for sequence diagram.</p>
 </div>
 </div>
 <div class="sect3">
@@ -976,9 +979,9 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <div class="sect2">
 <h3 id="request-feature"><a class="link" href="#request-feature">4.5. Request feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current implementation</a></h4>
 <div class="paragraph">
-<p>The Request command utilises both the <code>RequestModel</code> and <code>Logic</code> component to fulfil its function.
+<p>The <code>Request</code> command utilises both the <code>RequestModel</code> and <code>Logic</code> component to fulfil its function.
 This is accessible for all users.</p>
 </div>
 </div>
@@ -987,8 +990,8 @@ This is accessible for all users.</p>
 <div class="sect4">
 <h5 id="aspect-request-command-is-implemented-in-a-different-category"><a class="link" href="#aspect-request-command-is-implemented-in-a-different-category">Aspect: Request command is implemented in a different category</a></h5>
 <div class="paragraph">
-<p>As mentioned above, Request is called in RequestModel and RequestStorage.
-A request object consists of three objects, Isbn, Email, and Quantity.</p>
+<p>As mentioned above, <code>Request</code> is called in <code>RequestModel</code> and <code>RequestStorage</code>.
+A request object consists of three objects, <code>Isbn</code>, <code>Email</code>, and <code>Quantity</code>.</p>
 </div>
 </div>
 <div class="sect4">
@@ -997,11 +1000,11 @@ A request object consists of three objects, Isbn, Email, and Quantity.</p>
 <div class="content">
 <img src="images/RequestModelClassDiagram.jpg" alt="RequestModelClassDiagram" width="800">
 </div>
-<div class="title">Figure 13. Structure of the RequestModel Component</div>
+<div class="title">Figure 13. Structure of the <code>RequestModel</code> Component</div>
 </div>
 <div class="paragraph">
 <p>The implementation is similar to 2.4. Model component.
-Note that XmlAdaptedTag class is removed as request has no tags.</p>
+Note that <code>XmlAdaptedTag</code> class is removed as request has no tags.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1010,10 +1013,10 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <div class="content">
 <img src="images/RequestStorageClassDiagram.jpg" alt="RequestStorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 14. Structure of the RequestStorage Component</div>
+<div class="title">Figure 14. Structure of the <code>RequestStorage</code> Component</div>
 </div>
 <div class="paragraph">
-<p>Likewise, this implementation is similar to 2.5. Storage component.</p>
+<p>Likewise, this implementation is similar to 2.5. Storage Component.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1022,22 +1025,22 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <div class="content">
 <img src="images/HighLevelRequestSequenceDiagram.png" alt="HighLevelRequestSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 15. Structure of Request (High Level Sequence Diagram)</div>
+<div class="title">Figure 15. Structure of <code>Request</code> (High Level Sequence Diagram)</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Similar to Add Command</strong></p>
+<p><strong>Similar to <code>Add</code> Command</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>After request command is called by the user, it gets parsed through a RequestListParser.</p>
+<p>After request command is called by the user, it gets parsed through a <code>RequestListParser</code>.</p>
 </li>
 <li>
-<p>The UI also prompts to EventCenter and logs out that the Request List has changed.</p>
+<p>The UI also prompts to <code>EventCenter</code> and shows that the <code>RequestList</code> has changed.</p>
 </li>
 <li>
-<p>Request object is created and added to the model.</p>
+<p><code>Request</code> object is created and added to the model.</p>
 </li>
 <li>
 <p>The storage then receives the request and returns message to model, which is then transferred to the UI.</p>
@@ -1049,14 +1052,14 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 </div>
 </li>
 <li>
-<p><strong>Similar to Delete Command</strong></p>
+<p><strong>Similar to <code>Delete</code> Command</strong></p>
 <div class="ulist">
 <ul>
 <li>
 <p>The bookstore owner may decide whether to accept or reject a request offer.</p>
 </li>
 <li>
-<p>After deciding, he or she can type deleterequest to remove Request from the RequestList.</p>
+<p>After deciding, he or she can type <code>deleterequest</code> to remove <code>Request</code> from the <code>RequestList</code>.</p>
 </li>
 </ul>
 </div>
@@ -1070,7 +1073,20 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <div class="content">
 <img src="images/ToggleRequestSequenceDiagram.png" alt="ToggleRequestSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 16. Sequence Diagram of the ToggleRequests Component</div>
+<div class="title">Figure 16. Sequence Diagram of the <code>ToggleRequests</code> Component</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When the user types <code>togglerequests</code>, a <code>RequestPanelChangedEvent</code> exception is raised.</p>
+</li>
+<li>
+<p>A function in the UI page, <code>MainWindow</code>, handles this event by toggling the display.</p>
+</li>
+<li>
+<p>A message will then be sent to the user, indicating that the request panel is toggled.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1081,6 +1097,18 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The statistic feature is facilitated by a singleton class StatisticCenter. It is called directly from many existing commands and is stored in Json format.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently this feature isn&#8217;t integrated with the undo/redo feature. It is planned for v2.0.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the StatisticCenter interact with sell command:</p>
@@ -1098,27 +1126,27 @@ Note that XmlAdaptedTag class is removed as request has no tags.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Increases quantity in the Quantity Class.</p>
+<p><strong>Alternative 1 (current choice):</strong> Singleton Class</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Code is more cohesive.</p>
+<p>Pros: Easy to implement.</p>
 </li>
 <li>
-<p>Cons: Adds more code to Quantity Class.</p>
+<p>Cons: Hard to test.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Replace quantity in the Book Class.</p>
+<p><strong>Alternative 2:</strong> Dependency Injection.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Does not need to edit Quantity Class.</p>
+<p>Pros: Decouples dependencies but hard to implement.</p>
 </li>
 <li>
-<p>Cons: Code becomes less cohesive.</p>
+<p>Cons: Easier to test.</p>
 </li>
 </ul>
 </div>
@@ -1338,21 +1366,54 @@ It is a quick access panel located at the side of the application. The command l
 <div class="sect2">
 <h3 id="command-prediction"><a class="link" href="#command-prediction">4.9. Command Prediction</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">4.9.1. Current Implementation</a></h4>
+<h4 id="rationale"><a class="link" href="#rationale">4.9.1. Rationale</a></h4>
 <div class="paragraph">
 <p>To maximize user friendliness, we have implemented predictive text which will appear
-familiar for phone users. BookInventory users may inadvertently misspell command words,
+familiar for phone users. <strong><span class="yellow"><em>BookInventory</em></span></strong> users may inadvertently misspell command words,
 e.g. lis (Expected command: list). This will now prompt a GUI log stating, "Did you mean,
-list?". To achieve this, we have utilized the Dice Coefficient.</p>
+list?" To achieve this, we have utilized the Dice Coefficient.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">4.9.2. Design Considerations</a></h4>
+<h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">4.9.2. Current Implementation</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/CommandPredictionSequenceDiagram.png" alt="CommandPredictionSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 17. Logic Sequence Diagram (Command "Togglereq" called)</div>
+</div>
+<div class="paragraph">
+<p>Here is a step-by-step walk-through on how this algorithm works.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: When the user types "togglereq" in the command box and hits enter, the command is accepted by the UI
+and passed to the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: It first gets the <code>previousCommand</code> keyed in by the user. This is necessary
+as the commands undo/redo are only accepted in <code>RequestList</code> if the previous command keyed in
+belongs to <code>RequestList</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: <code>parseInput</code> is then called, which returns true as <code>DifferentiatingParser</code> detects that the command should
+ belong to <code>RequestListParser</code>. <code>LogicManager</code> then calls <code>parseCommandRequest</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: <code>RequestListParser</code> calls <code>performSimilarityCheck</code> in <code>SimilarityParser</code>. Dice Coefficient detects that the
+command is similar to the command <code>togglerequests</code>, and return it in the form of a String, in <code>predictedCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: <code>ParseException</code> is eventually thrown in <code>RequestListParser</code>, signalling to the user that
+a spelling error is detected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">4.9.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-does-dice-coefficient-works"><a class="link" href="#aspect-how-does-dice-coefficient-works">Aspect: How does Dice Coefficient works?</a></h5>
 <div class="paragraph">
-<p>Dice&#8217;s coefficient measures the similarity between two sets. It can also be used to help measure how
-similar two strings are in terms of the number of common bigrams (a bigram is a pair of adjacent
+<p>Dice&#8217;s coefficient measures the similarity between two sets. In <strong><span class="yellow"><em>BookInventory</em></span></strong>, we use it to help measure how
+similar two strings are in terms of the number of common bigrams (A bigram is a pair of adjacent
 letters in the string).The Coefficient result of 1 indicates identical vectors (completely equal strings) as
 where a 0 equals orthogonal vectors (completely unequal strings).</p>
 </div>
@@ -1363,10 +1424,10 @@ where a 0 equals orthogonal vectors (completely unequal strings).</p>
 <div class="sect4">
 <h5 id="aspect-how-well-does-this-algorithm-predicts"><a class="link" href="#aspect-how-well-does-this-algorithm-predicts">Aspect: How well does this algorithm predicts?</a></h5>
 <div class="paragraph">
-<p>Our current implementation sets Dice&#8217;s Coefficient to 0.5. Through our testing, this appears
-fine for most spelling errors. However, it will not predict too ridiculous errors because we
-do not wish to face a scenario where the suggestion offers another command word which is
-unintended by the user.</p>
+<p>Our current implementation sets Dice&#8217;s Coefficient to 0.5. For some scenarios, we have implemented
+an adjusted value of 0.7. Through our testing, this appears fine for most spelling errors.
+However, it will not predict too ridiculous errors because we do not wish to face a scenario where
+the suggestion offers another command word which is unintended by the user.</p>
 </div>
 </div>
 </div>
@@ -1397,7 +1458,7 @@ unintended by the user.</p>
 <div class="content">
 <img src="images/TabSequenceDiagram.png" alt="TabSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 17. Sequence Diagram for Tab Operation</div>
+<div class="title">Figure 18. Sequence Diagram for Tab Operation</div>
 </div>
 <div class="paragraph">
 <p>After the function <code>navigateToNextIsbn()</code> is completed, <code>commandTextField.requestFocus()</code> and <code>commandTextField.positionCaret(commandTextField.getLength())</code> are called to bring the caret to the end of the line for users to continue typing the command.</p>
@@ -1548,7 +1609,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 18. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 19. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3059,7 +3120,7 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First book is deleted from the list. Details of the deleted book shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
@@ -3079,7 +3140,144 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">H.3. Saving data</a></h3>
+<h3 id="checking-quantity-of-books"><a class="link" href="#checking-quantity-of-books">H.3. Checking quantity of books</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Checks inventory for books less than or equal to the quantity</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None.</p>
+</li>
+<li>
+<p>Test case: <code>check 1</code><br>
+Expected: Displays the list of books ordered in ascending order with quantity less than 1. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>check -1</code><br>
+Expected: Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect sell commands to try: <code>check x</code>(where x is lesser than 0 or larger than 999),<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selling-a-book"><a class="link" href="#selling-a-book">H.4. Selling a book</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selling a book while all books are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all books using the <code>list</code> command. Multiple books in the list.</p>
+</li>
+<li>
+<p>Test case: <code>sell 1 q/1</code><br>
+Expected: Quantity of first book is decreased by one. Number of books sold and details of the sold book shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>sell 0 q/1</code><br>
+Expected: No book is sold. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect sell commands to try: <code>sell</code>, <code>sell 1</code>, <code>sell x q/1</code> (where x is larger than the list size),<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Selling a book using Isbn</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None.</p>
+</li>
+<li>
+<p>Test case: <code>sell i/9780321775658 q/1</code><br>
+Expected: Quantity of book with the isbn is decreased by one. Number of books sold and details of the sold book shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>sell i/1234567890 q/1</code><br>
+Expected: No book is sold. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect sell commands to try: <code>sell i/ q/1</code>, <code>sell i/9780321775658</code>, <code>sell i/x q/1</code> (where x is any invalid Isbn),<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-tab"><a class="link" href="#using-tab">H.5. Using Tab</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Complete empty Isbn field</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Type <code>i/</code> in the <code>CommandBox</code>.</p>
+</li>
+<li>
+<p>Test case: Press <code>TAB</code><br>
+Expected: Isbn of first book in the list is displayed in the CommandBox.</p>
+</li>
+<li>
+<p>Test case: Press <code>TAB</code> twice<br>
+Expected: Isbn of first book is displayed followed by the second book in the list in the CommandBox.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Complete half inputted Isbn field</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Type <code>i/978</code> in the <code>CommandBox</code>.</p>
+</li>
+<li>
+<p>Test case: Press <code>TAB</code><br>
+Expected: Isbn of first book containing <code>978</code> in the list is displayed in the CommandBox.</p>
+</li>
+<li>
+<p>Test case: Press <code>TAB</code> twice<br>
+Expected: Isbn of first book containing <code>978</code> is displayed followed by the second book containing <code>978</code> in the list in the CommandBox.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Complete invalid half inputted Isbn field</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Type <code>i/777</code> in the <code>CommandBox</code>.</p>
+</li>
+<li>
+<p>Test case: Press <code>TAB</code><br>
+Expected: Nothing happens.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">H.6. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3099,4 +3297,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:26:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:22:07 UTC</div></div></div></body></html>
