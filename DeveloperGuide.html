@@ -97,7 +97,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BookInventory™ is catered solely for students as well as other managerial roles such as store managers and accountant. BookInventory™ allows store managers to increase/decrease stocks for each book. Accountants will be able to check the total revenue and profits for individual books to make better decisions to improve the sales. Students will have access in checking the availability of materials related to their modules. Most importantly, BookInventory™ is optimized for those who prefer to work with Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+<p><em>BookInventory</em> is catered solely for students as well as other managerial roles such as store managers and accountant. <em>BookInventory</em> allows store managers to increase/decrease stocks for each book. Accountants will be able to check the total revenue and profits for individual books to make better decisions to improve the sales. Students will have access in checking the availability of materials related to their modules. Most importantly, <em>BookInventory</em> is optimized for those who prefer to work with <strong>Command Line Interface (CLI)</strong> while still having the benefits of a <strong>Graphical User Interface (GUI)</strong>.</p>
 </div>
 </div>
 </div>
@@ -538,7 +538,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Book Inventory data.</p>
+<p>stores the <code>Book Inventory</code> data.</p>
 </li>
 <li>
 <p>exposes an unmodifiable <code>ObservableList&lt;Book&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
@@ -583,7 +583,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Book Inventor
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Book Inventory data in xml format and read it back.</p>
+<p>can save the <code>Book Inventory</code> data in xml format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -591,7 +591,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Book Inventor
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.bookinventory.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.address.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -807,7 +807,7 @@ If the <code>currentStatePointer</code> is at index <code>bookInventoryStateList
 <div class="sect2">
 <h3 id="check-feature"><a class="link" href="#check-feature">4.2. Check feature</a></h3>
 <div class="paragraph">
-<p>One of the <strong>important</strong> features for BookInventory is for users, especially store owners, to be able to check the remaining stocks for the books.
+<p>One of the <strong>important</strong> features for BookInventory is for users, especially store owners, to be able to check the remaining stocks of the books in the inventory.
 To do so, we have added a <code>check</code> command to the existing list of commands.</p>
 </div>
 <div class="sect3">
@@ -852,7 +852,7 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <p>Pros: Original order of the BookInventory is kept.</p>
 </li>
 <li>
-<p>Cons: Changes to the original code to display the list is required.</p>
+<p>Cons: Changes in the original code to display the list is required.</p>
 </li>
 </ul>
 </div>
@@ -1365,12 +1365,21 @@ unintended by the user.</p>
 <div class="sect2">
 <h3 id="tab-feature"><a class="link" href="#tab-feature">4.10. Tab feature</a></h3>
 <div class="paragraph">
-<p>For users' <strong>convenience</strong>, we have implemented this feature for them to easily cycle through existing <code>ISBN</code> in the inventory without the need to manually type them out.</p>
+<p>For users' <strong>convenience</strong>, we have implemented this feature to easily cycle through existing <code>ISBN</code> in the inventory without the need to manually type them out.</p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-10"><a class="link" href="#current-implementation-10">4.10.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The tab mechanism utilises <code>Ui</code>, <code>Model</code> and <code>Logic</code> component to complete its function.</p>
+<p>The tab mechanism utilises <code>Ui</code>, <code>Model</code> and <code>Logic</code> components. It stores the list of Isbn in a Queue Data Structure.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the tab mechanism works</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user enters <code>sell i/978</code> in the <code>CommandBox</code> to sell a book with the Isbn starting with '978'.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: The user now feels that keying the whole 13 digit of the Isbn is a hassle, and decides to complete the Isbn using pressing <code>tab</code>. The <code>tab</code> feature will take in <code>sell i/978</code> in the <code>CommandBox</code> and retrieve <code>978</code> from the Isbn field.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the tab operation works:</p>
@@ -1382,7 +1391,10 @@ unintended by the user.</p>
 <div class="title">Figure 16. Sequence Diagram for Tab Operation</div>
 </div>
 <div class="paragraph">
-<p>After the function <code>navigateToNextIsbn()</code> is completed, <code>commandTextField.requestFocus()</code> and <code>commandTextField.positionCaret(commandTextField.getLength())</code> are called to bring the caret to the end of the line for users to finish typing their command.</p>
+<p>After the function <code>navigateToNextIsbn()</code> is completed, <code>commandTextField.requestFocus()</code> and <code>commandTextField.positionCaret(commandTextField.getLength())</code> are called to bring the caret to the end of the line for users to continue typing the command.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: The user presses <code>tab</code> again as the Isbn is not correct. The <code>tab</code> feature will then check if the Isbn matches the first Isbn in the Queue. If it matches, the first Isbn in the Queue will be removed and added to the end of the Queue. The next Isbn in the Queue will be displayed.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3010,4 +3022,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:02:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:26:45 UTC</div></div></div></body></html>
