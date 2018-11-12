@@ -10,16 +10,10 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>BookInventory</em> is a <strong>multi-platform</strong> desktop application catered <strong>primarily</strong> for store owners to manage their book supplies. It includes many basic and advance features such as adding, deleting and requesting of books in the inventory.</p>
+<p><em>BookInventory</em> is a <strong>multi-platform</strong> desktop application catered <strong>primarily</strong> for store owners to manage their book supplies. It includes many basic and advance features such as adding, deleting and requesting of books in the inventory. Users interact with <em>BookInventory</em> using <strong>Command Line Interface (CLI)</strong>, and has a <strong>Graphic User Interface (GUI)</strong> created with JavaFX.</p>
 </div>
 <div class="paragraph">
-<p>Users interact with <em>BookInventory</em> using <strong>Command Line Interface (CLI)</strong>, and has a <strong>Graphic User Interface (GUI)</strong> created with JavaFX.</p>
-</div>
-<div class="paragraph">
-<p><em>BookInventory</em> was developed by a team of four students over a period of one semester. The original source code was adapted from the Address Book (Level 4) project by SE-EDU.</p>
-</div>
-<div class="paragraph">
-<p><em>BookInventory</em> started as a project for the following modules offered by the School of Computing, National University of Singapore:</p>
+<p><em>BookInventory</em> was developed by a team of four students over a period of one semester. The original source code was adapted from the Address Book (Level 4) project by SE-EDU. It started as a project for the following modules offered by the School of Computing, National University of Singapore:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -392,10 +386,10 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Reuses current imports of <code>CommandBox</code> to function.</p>
+<p>Pros: Does not change current imports of <code>CommandBox</code> for it to function.</p>
 </li>
 <li>
-<p>Cons: Increases coupling as it does not uphold the Law of Demeter.</p>
+<p>Cons: Increases coupling as it violates the Law of Demeter.</p>
 </li>
 </ul>
 </div>
@@ -408,7 +402,7 @@ To do so, we have added a <code>check</code> command to the existing list of com
 <p>Pros: Easy to access.</p>
 </li>
 <li>
-<p>Cons: Increases coupling as <code>CommandBox</code> now imports both <code>Logic</code> and `Model.</p>
+<p>Cons: Increases coupling as <code>CommandBox</code> now imports both <code>Logic</code> and <code>Model</code>.</p>
 </li>
 </ul>
 </div>
@@ -419,4 +413,4 @@ To do so, we have added a <code>check</code> command to the existing list of com
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 07:25:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 07:56:10 UTC</div></div></div></body></html>
