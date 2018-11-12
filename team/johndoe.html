@@ -181,11 +181,110 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="commands-for-bookstore-in-house-accountants"><a class="link" href="#commands-for-bookstore-in-house-accountants">Commands for Bookstore In-house Accountants</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>If you are an accountant, you can access the aforementioned commands as well as the following.</p>
+</div>
+<div class="sect2">
+<h3 id="display-account-data-code-stats-code"><a class="link" href="#display-account-data-code-stats-code">Display account data : <code>stats</code></a></h3>
+<div class="paragraph">
+<p>Displays the total revenue made.<br>
+Format: <code>stats</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="commands-for-bookstore-owners"><a class="link" href="#commands-for-bookstore-owners">Commands for Bookstore Owners</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are a bookstore owner, you are granted access to all available commands in <em>BookInventory</em>.
+Additional commands below are catered for your convenience.</p>
+</div>
+<div class="sect2">
+<h3 id="adding-a-book-code-add-code"><a class="link" href="#adding-a-book-code-add-code">Adding a book: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Adds a book to the inventory list<br>
+Format: <code>add n/NAME i/ISBN13 p/PRICE q/QUANTITY (c/COST) [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A book can have any number of tags (including 0)<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>ISBNs are calculated using a specific mathematical formula and include a check digit to validate the number. Random invalid 10 to 13 digit values will produce an error</p>
+</li>
+<li>
+<p>ISBN field allows input with and without dashes</p>
+</li>
+<li>
+<p>PRICE field is the selling price of the book</p>
+</li>
+<li>
+<p>COST field is the cost price of the book</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Clears all entries from the BookInventory.<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="check-inventory-code-check-code"><a class="link" href="#check-inventory-code-check-code">Check Inventory: <code>check</code></a></h3>
+<div class="paragraph">
+<p>Finds books with quantity less than or equal to the given input value. List of books displayed in ascending order based on quantity left<br>
+Format: <code>check QUANTITY</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>QUANTITY only accepts input between 0 and 999, inclusive</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>check 4</code><br>
+Displays list of all books with quantity less than or equal to 4.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-book-code-delete-code"><a class="link" href="#deleting-a-book-code-delete-code">Deleting a book : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified book from the inventory list.<br>
+Format: <code>delete INDEX</code> OR <code>delete i/ISBN13</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -193,28 +292,311 @@ Format: <code>redo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete i/978-2-12-345680-3</code><br>
-<code>undo</code> (reverses the <code>delete i/978-2-12-345680-3</code> command)<br>
-<code>redo</code> (reapplies the <code>delete i/978-2-12-345680-3</code> command)<br></p>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd book in the displayed list.</p>
 </li>
 <li>
 <p><code>delete i/978-2-12-345680-3</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete i/978-2-12-345680-3</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete i/978-2-12-345680-3</code> command)<br>
-<code>redo</code> (reapplies the <code>delete i/978-2-12-345680-3</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+Deletes the book with the corresponding iSBN13 from the inventory list.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
+<h3 id="deleting-a-request-code-deleterequest-code"><a class="link" href="#deleting-a-request-code-deleterequest-code">Deleting a request : <code>deleterequest</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified request from the request list. Strictly for bookstore owners.<br>
+Format: <code>deleterequest INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleterequest 2</code><br>
+Deletes the 2nd request in the displayed request list.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>request i/978-2-12-345680-3 e/johnd@gmail.com q/5</code><br>
+Requests for 5 same books with the corresponding iSBN13 with requester&#8217;s email <a href="mailto:johnd@gmail.com">johnd@gmail.com</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-book-code-edit-code"><a class="link" href="#editing-a-book-code-edit-code">Editing a book : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing book in the inventory book.<br>
+Format: <code>edit INDEX [n/NAME] [i/ISBN] [p/PRICE] [c/COST] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the book at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed book list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>Quantity Field cannot be an input values. Use <code>stock</code> and <code>sell</code> to change Quantity Field</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/20 n/Chemistry</code><br>
+Edits the price and name of the 1st book to be <code>20</code> and <code>Chemistry</code> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 c/30 t/</code><br>
+Edits the cost of the 2nd book to be <code>30</code> and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="toggle-request-panel-code-togglerequests-code"><a class="link" href="#toggle-request-panel-code-togglerequests-code">Toggle request panel : <code>togglerequests</code></a></h3>
+<div class="paragraph">
+<p>Toggle the request panel. When toggled off, requests are hidden and request panel can be minimized. Strictly for bookstore owners.<br>
+Format: <code>togglerequests</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="decrease-book-quantity-books-sold-code-sell-code"><a class="link" href="#decrease-book-quantity-books-sold-code-sell-code">Decrease Book Quantity (Books Sold) : <code>sell</code></a></h3>
+<div class="paragraph">
+<p>Decrease an existing book quantity in the inventory list.<br>
+Format: <code>sell INDEX q/QUANTITY</code> OR <code>sell i/ISBN13 q/QUANTITY</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Decrease the quantity at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Decrease the quantity of the book with the respective ISBN. ISBN is <strong>unique</strong> to each book</p>
+</li>
+<li>
+<p>Existing quantity will decrease by the input value.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>sell 1 q/5</code><br>
+Decrease the quantity available of the 1st book by 5.</p>
+</li>
+<li>
+<p><code>sell i/978-2-12-345680-3 q/4</code><br>
+Decrease the quantity available for the book with the corresponding ISBN13 by 4.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="increase-book-quantity-ordered-more-books-code-stock-code"><a class="link" href="#increase-book-quantity-ordered-more-books-code-stock-code">Increase Book Quantity (Ordered more books): <code>stock</code></a></h3>
+<div class="paragraph">
+<p>Increase an existing book quantity in the inventory list.<br>
+Format: <code>stock INDEX q/QUANTITY</code> OR <code>stock i/ISBN13 q/QUANTITY</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Increase the stock at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Increase the quantity of the book with the respective ISBN. ISBN is <strong>unique</strong> to each book. Quantity <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Existing quantity will be increase by the input value.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>stock 2 q/6</code><br>
+Increase the quantity available of the 2nd book by 6.</p>
+</li>
+<li>
+<p><code>stock i/978-2-12-345680-3 q/5</code><br>
+Increase the quantity available for the book with the corresponding ISBN13 by 5.
+Examples:</p>
+</li>
+<li>
+<p><code>add n/Harry Potter i/9781408855713 p/60.70 q/100 c/30.90 t/difficult</code></p>
+</li>
+<li>
+<p><code>add n/Lord of the Rings i/9789655171990 p/59.90 q/271 c/20.99</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data-storage"><a class="link" href="#data-storage">Data Storage</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h3>
+<div class="paragraph">
+<p>BookInventory data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can enable/disable data encryption}</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your          previous Inventory Book folder.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How to install Java?<br>
+<strong>A</strong>: Visit <a href="https://docs.oracle.com/javase/10/install/overview-jdk-10-and-jre-10-installation.html" class="bare">https://docs.oracle.com/javase/10/install/overview-jdk-10-and-jre-10-installation.html</a> for more information<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I get the latest version?<br>
+<strong>A</strong>: Watch us on github [<a href="https://github.com/CS2113-AY1819S1-W13-4" class="bare">https://github.com/CS2113-AY1819S1-W13-4</a>] to get the latest updates</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="commands-for-students"><a class="link" href="#commands-for-students">Commands for Students</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>Exit</strong> : <code>exit</code></p>
+</li>
+<li>
+<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>find biology chemistry</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>History</strong> : <code>history</code></p>
+</li>
+<li>
+<p><strong>Redo</strong> : <code>redo</code></p>
+</li>
+<li>
+<p><strong>Request</strong> : <code>request i/ISBN13 e/EMAIL q/QUANTITY</code><br>
+e.g. <code>request i/978-2-12-345680-3 e/johnd@gmail.com q/5</code></p>
+</li>
+<li>
+<p><strong>Undo</strong> : <code>undo</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="additional-commands-for-accountants"><a class="link" href="#additional-commands-for-accountants">Additional Commands for Accountants</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Display Statistics</strong> : <code>stats</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="additional-commands-for-owners"><a class="link" href="#additional-commands-for-owners">Additional Commands for Owners</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add n/NAME i/ISBN13 p/PRICE q/QUANTITY (c/COST) [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add n/Harry Potter i/978-2-12-345680-3 p/60.70 q/100 c/90 t/difficult</code></p>
+</li>
+<li>
+<p><strong>Check</strong> : <code>check QUANTITY</code><br>
+e.g. <code>check 4</code></p>
+</li>
+<li>
+<p><strong>Clear</strong> : <code>clear</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code> OR <code>delete i/ISBN13</code><br>
+e.g. <code>delete 1</code> OR <code>delete i/978-2-12-345680-3</code></p>
+</li>
+<li>
+<p><strong>DeleteRequest</strong> : <code>deleterequest INDEX</code><br>
+e.g. <code>deleterequest 1</code></p>
+</li>
+<li>
+<p><strong>Edit</strong> : <code>edit INDEX n/NAME i/ISBN13 p/PRICE c/COST [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>edit INDEX n/Chemistry p/30.00</code></p>
+</li>
+<li>
+<p><strong>Sell</strong> : <code>sell INDEX q/QUANTITY</code> OR <code>sell i/ISBN13 q/QUANTITY</code><br>
+e.g. <code>sell 1 q/8</code> OR <code>sell i/978-2-12-345680-3 q/8</code></p>
+</li>
+<li>
+<p><strong>Stock</strong> : <code>stock INDEX q/QUANTITY</code> OR <code>stock i/ISBN13 q/QUANTITY</code><br>
+e.g. <code>stock 1 q/8</code> OR <code>stock i/978-2-12-345680-3 q/8</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code-2"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code-2">Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -446,4 +828,4 @@ If the <code>currentStatePointer</code> is at index <code>bookInventoryStateList
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:41:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:57:16 UTC</div></div></div></body></html>
